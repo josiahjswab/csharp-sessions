@@ -73,7 +73,16 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding FirstName}" FontWeight="Bold" ></Label>
+                        <Label Content="{Binding FirstName}" FontWeight="Bold" >
+
+
+
+
+
+
+
+
+                        </Label>
                         <Label Content="{Binding LastName}"></Label>
                     </StackPanel>
                 </DataTemplate>
