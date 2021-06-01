@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/ClassLibrary1.dll": {}
         }
+      },
+      "WpfControlLibrary1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/WpfControlLibrary1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WpfControlLibrary1.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../ClassLibrary1/ClassLibrary1.csproj",
       "msbuildProject": "../ClassLibrary1/ClassLibrary1.csproj"
+    },
+    "WpfControlLibrary1/1.0.0": {
+      "type": "project",
+      "path": "../WpfControlLibrary1/WpfControlLibrary1.csproj",
+      "msbuildProject": "../WpfControlLibrary1/WpfControlLibrary1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ClassLibrary1 >= 1.0.0"
+      "ClassLibrary1 >= 1.0.0",
+      "WpfControlLibrary1 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -60,6 +79,9 @@
           "projectReferences": {
             "C:\\Users\\Josiah\\source\\repos\\WpfApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
               "projectPath": "C:\\Users\\Josiah\\source\\repos\\WpfApp1\\ClassLibrary1\\ClassLibrary1.csproj"
+            },
+            "C:\\Users\\Josiah\\source\\repos\\WpfApp1\\WpfControlLibrary1\\WpfControlLibrary1.csproj": {
+              "projectPath": "C:\\Users\\Josiah\\source\\repos\\WpfApp1\\WpfControlLibrary1\\WpfControlLibrary1.csproj"
             }
           }
         }

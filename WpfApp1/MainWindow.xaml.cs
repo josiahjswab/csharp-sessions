@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace WpfApp1
                 BDay = DateTime.Now
             };
 
-            var list = new List<Person>()
+            var list = new ObservableCollection<Person>()
             {
                 foo
             };
@@ -60,6 +61,17 @@ namespace WpfApp1
             //MessageBox.Show(new MessageProvider().GetMessage());
             //MessageBox.Show(MySecondClass.GetMessage("Hello"));
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Debug.Print("Button Click");
+            var person = new Person();
+            person.FirstName = FirstNameTextBox.Text;
+            person.LastName = "S";
+            person.BDay = DateTime.Now;
+            var list = (ObservableCollection<Person>)People.ItemsSource;
+            list.Add(person);
         }
     }
 }

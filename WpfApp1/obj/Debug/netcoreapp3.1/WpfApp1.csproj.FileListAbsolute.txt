@@ -20,3 +20,5 @@ C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.gen
 C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\ClassLibrary1.dll
 C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\ClassLibrary1.pdb
 C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.CopyComplete
+C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfControlLibrary1.dll
+C:\Users\Josiah\source\repos\WpfApp1\WpfApp1\bin\Debug\netcoreapp3.1\WpfControlLibrary1.pdb

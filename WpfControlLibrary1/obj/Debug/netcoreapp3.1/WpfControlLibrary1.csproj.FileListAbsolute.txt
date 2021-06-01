@@ -1,0 +1,14 @@
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\bin\Debug\netcoreapp3.1\WpfControlLibrary1.deps.json
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\bin\Debug\netcoreapp3.1\WpfControlLibrary1.dll
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\bin\Debug\netcoreapp3.1\WpfControlLibrary1.pdb
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.csprojAssemblyReference.cache
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\UserControl1.g.cs
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1_MarkupCompile.cache
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1_MarkupCompile.lref
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\UserControl1.baml
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.g.resources
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.AssemblyInfoInputs.cache
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.AssemblyInfo.cs
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.dll
+C:\Users\Josiah\source\repos\WpfApp1\WpfControlLibrary1\obj\Debug\netcoreapp3.1\WpfControlLibrary1.pdb

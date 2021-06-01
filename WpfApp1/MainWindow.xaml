@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:ctrl="clr-namespace:WpfControlLibrary1;assembly=WpfControlLibrary1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -47,47 +48,53 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-    <Grid VerticalAlignment="Stretch" MaxWidth="500" Margin="20" Background="red">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            
         </Grid.RowDefinitions>
-        <StackPanel>
-            <Label Content="First Name" Margin="7 0"/>
-            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <Label Content="Last Name" Margin="7 0"/>
-            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <Label Content="Date of Birth" Margin="7 0"/>
-            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
-        </StackPanel>
-        <ListBox Grid.Row="2" Grid.ColumnSpan="2" Margin="20" x:Name="People" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding FirstName}" FontWeight="Bold" >
-
-
-
-
-
-
-
-
-                        </Label>
-                        <Label Content="{Binding LastName}"></Label>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ctrl:UserControl1></ctrl:UserControl1>
+        <Border Grid.Row="1" BorderBrush="#ddd" BorderThickness="1" MaxWidth="500" Margin="20" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="7" Color="#f1f1f1"></DropShadowEffect>
+            </Border.Effect>
+            <Grid VerticalAlignment="Stretch" Background="#f1f1f1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <Label Content="First Name" Margin="7 0"/>
+                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Content="Last Name" Margin="7 0"/>
+                    <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <Label Content="Date of Birth" Margin="7 0"/>
+                    <TextBox x:Name="DateOfBirthBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
+                </StackPanel>
+                <Button Grid.Row="2" Click="Button_Click_1">Add Victim</Button>
+                <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="People" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label Content="{Binding FirstName}" FontWeight="Bold" >
+                                </Label>
+                                <Label Content="{Binding LastName}"></Label>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
     </Grid>
-
 </Window>
