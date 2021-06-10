@@ -52,7 +52,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            
+
         </Grid.RowDefinitions>
         <ctrl:UserControl1></ctrl:UserControl1>
         <Border Grid.Row="1" BorderBrush="#ddd" BorderThickness="1" MaxWidth="500" Margin="20" >
@@ -82,8 +82,8 @@
                     <Label Content="Date of Birth" Margin="7 0"/>
                     <TextBox x:Name="DateOfBirthBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
                 </StackPanel>
-                <Button Grid.Row="2" Click="Button_Click_1">Add Victim</Button>
-                <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="People" >
+                <Button Grid.Row="2" Click="Button_Click_1" Margin="10,5,0,5">Add Victim</Button>
+                <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="PeopleListControl" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -94,7 +94,11 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                <Button Grid.Row="2" Click="Button_Click_2" Content="Load Victims" Grid.Column="1" Margin="13,5,10,5" Background="Red"/>
             </Grid>
+        </Border>
+        <Border x:Name="LoadingIndicator" Visibility="Collapsed" Grid.Row="1" BorderBrush="#ddd" BorderThickness="1" MaxWidth="500" Margin="20" Background="#99000000">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">Loading...</TextBlock>
         </Border>
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,8 +52,7 @@ namespace WpfApp1
 
             list.Add(person);
 
-            People.ItemsSource = list;
-
+            PeopleListControl.ItemsSource = list; // ctrl R R renames all references
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -70,8 +70,47 @@ namespace WpfApp1
             person.FirstName = FirstNameTextBox.Text;
             person.LastName = "S";
             person.BDay = DateTime.Now;
-            var list = (ObservableCollection<Person>)People.ItemsSource;
+            var list = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
             list.Add(person);
         }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                LoadingIndicator.Visibility = Visibility.Visible;
+                var peoples = await new GetPeople().MakeFakeApiCall();
+                LoadingIndicator.Visibility = Visibility.Collapsed;
+                var collection = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
+
+                foreach (var person in peoples)
+                {
+                    collection.Add(person);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
+
+    public class GetPeople
+    {
+        public async Task<List<Person>> MakeFakeApiCall()
+        {
+            await Task.Delay(2000);
+            //throw new InvalidOperationException("Foo");
+            return new List<Person>() {
+                new Person()
+                {
+                    FirstName = "Kaya",
+                    LastName = "S",
+                    BDay = DateTime.Now
+                }
+            };
+        }
+    }
+
 }
