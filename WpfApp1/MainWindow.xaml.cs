@@ -26,62 +26,36 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            //var sp = new StackPanel();
-            //Content = sp;
-            //var button = new Button();
-            //button.Content = "I am in the code behind!";
-            //button.HorizontalAlignment = HorizontalAlignment.Left;
-            //button.VerticalAlignment = VerticalAlignment.Center;
-            //sp.Children.Add(button);
-            var foo = new Person()
-            {
-                FirstName = "Ben",
-                LastName = "Z",
-                BDay = DateTime.Now
-            };
-
-            var list = new ObservableCollection<Person>()
-            {
-                foo
-            };
-
-            var person = new Person();
-            person.FirstName = "Josiah";
-            person.LastName = "S";
-            person.BDay = DateTime.Now;
-
-            list.Add(person);
-
-            PeopleListControl.ItemsSource = list; // ctrl R R renames all references
+            this.Loaded += MainWindow_Loaded;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(MySecondClass.MakeInteger(2.22).ToString());
-            //MessageBox.Show(new MessageProvider().GetMessage());
-            //MessageBox.Show(MySecondClass.GetMessage("Hello"));
-
+            var service = new VictimService();
+            var victims = await service.GetAll();
+            var list = new ObservableCollection<Person>(victims);
+            PeopleListControl.ItemsSource = list; // ctrl R R renames all references   throw new NotImplementedException();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void AddPerson_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Debug.Print("Button Click");
+            // System.Diagnostics.Debug.Print("Button Click");
             var person = new Person();
             person.FirstName = FirstNameTextBox.Text;
-            person.LastName = "S";
+            person.LastName = LastNameTextBox.Text;
             person.BDay = DateTime.Now;
             var list = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
             list.Add(person);
         }
 
-        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        private async void Refresh_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 LoadingIndicator.Visibility = Visibility.Visible;
-                var peoples = await new GetPeople().MakeFakeApiCall();
+                var peoples = await new VictimService().GetAll();
                 LoadingIndicator.Visibility = Visibility.Collapsed;
                 var collection = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
+                collection.Clear();
 
                 foreach (var person in peoples)
                 {
@@ -96,9 +70,9 @@ namespace WpfApp1
         }
     }
 
-    public class GetPeople
+    public class VictimService //Service performs an action outside of the scope of ui usually.
     {
-        public async Task<List<Person>> MakeFakeApiCall()
+        public async Task<List<Person>> GetAll()
         {
             await Task.Delay(2000);
             //throw new InvalidOperationException("Foo");
