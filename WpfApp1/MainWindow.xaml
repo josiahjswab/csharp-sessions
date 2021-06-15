@@ -7,6 +7,10 @@
         xmlns:ctrl="clr-namespace:WpfControlLibrary1;assembly=WpfControlLibrary1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:VictimManifestViewModel></local:VictimManifestViewModel>
+    </Window.DataContext>
+  
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="DodgerBlue"/>
@@ -79,7 +83,7 @@
                     <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
                 </StackPanel>
                 <Button Grid.Row="2" Click="AddPerson_Click" Margin="10,5,0,5">Add Victim</Button>
-                <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="PeopleListControl" >
+                <ListBox ItemsSource="{Binding VictimList}" Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="PeopleListControl" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

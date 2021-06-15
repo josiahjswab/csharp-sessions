@@ -31,10 +31,8 @@ namespace WpfApp1
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var service = new VictimService();
-            var victims = await service.GetAll();
-            var list = new ObservableCollection<Person>(victims);
-            PeopleListControl.ItemsSource = list; // ctrl R R renames all references   throw new NotImplementedException();
+            var Vm = (VictimManifestViewModel)this.DataContext;
+            Vm.OnNavigatedTo();
         }
         private void AddPerson_Click(object sender, RoutedEventArgs e)
         {
