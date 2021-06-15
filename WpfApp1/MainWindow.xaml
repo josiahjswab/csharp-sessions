@@ -76,13 +76,13 @@
                 </Grid.RowDefinitions>
                 <StackPanel>
                     <Label Content="First Name" Margin="7 0"/>
-                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
+                    <TextBox Text="{Binding FirstNameInput}" x:Name="FirstNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <Label Content="Last Name" Margin="7 0"/>
-                    <TextBox x:Name="LastNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
+                    <TextBox Text="{Binding LastNameInput}" x:Name="LastNameTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0"/>
                 </StackPanel>
-                <Button Grid.Row="2" Click="AddPerson_Click" Margin="10,5,0,5">Add Victim</Button>
+                <Button Grid.Row="2" Command="{Binding AddPersonCommand}" Margin="10,5,0,5">Add Victim</Button>
                 <ListBox ItemsSource="{Binding VictimList}" Grid.Row="3" Grid.ColumnSpan="2" Margin="20" x:Name="PeopleListControl" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -94,7 +94,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Grid.Row="2" Click="Refresh_Click" Content="Refresh" Grid.Column="1" Margin="13,5,10,5" Background="Red"/>
+                <Button Grid.Row="2" Command="{Binding RefreshCommand}" Content="Refresh" Grid.Column="1" Margin="13,5,10,5" Background="Red"/>
             </Grid>
         </Border>
         <Border x:Name="LoadingIndicator" Visibility="Collapsed" Grid.Row="1" BorderBrush="#ddd" BorderThickness="1" MaxWidth="500" Margin="20" Background="#99000000">

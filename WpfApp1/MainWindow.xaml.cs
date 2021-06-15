@@ -34,38 +34,8 @@ namespace WpfApp1
             var Vm = (VictimManifestViewModel)this.DataContext;
             Vm.OnNavigatedTo();
         }
-        private void AddPerson_Click(object sender, RoutedEventArgs e)
-        {
-            // System.Diagnostics.Debug.Print("Button Click");
-            var person = new Person();
-            person.FirstName = FirstNameTextBox.Text;
-            person.LastName = LastNameTextBox.Text;
-            person.BDay = DateTime.Now;
-            var list = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
-            list.Add(person);
-        }
+       
 
-        private async void Refresh_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                LoadingIndicator.Visibility = Visibility.Visible;
-                var peoples = await new VictimService().GetAll();
-                LoadingIndicator.Visibility = Visibility.Collapsed;
-                var collection = (ObservableCollection<Person>)PeopleListControl.ItemsSource;
-                collection.Clear();
-
-                foreach (var person in peoples)
-                {
-                    collection.Add(person);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.Print(ex.ToString());
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 
     public class VictimService //Service performs an action outside of the scope of ui usually.
